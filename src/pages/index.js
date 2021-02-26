@@ -1,5 +1,5 @@
 import React from "react"
 
 export default function Home() {
-  return <div>Hello world! I'm prolife.org.ua</div>
+  return <div>Hello world!<br />I'm prolife.org.ua</div>
 }
