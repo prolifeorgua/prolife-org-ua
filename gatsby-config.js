@@ -5,6 +5,9 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "ProLife.org.ua",
+    phone: "+380 66 777 88 99",
+  },
   plugins: [],
 }
