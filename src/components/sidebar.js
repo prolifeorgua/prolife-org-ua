@@ -1,8 +1,8 @@
-import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import React from "react";
+import { Link, StaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
 
-import { colors } from "../utils/vars"
+import { colors } from "../utils/vars";
 
 const Sidebar = styled.section`
   position: fixed;
@@ -14,14 +14,14 @@ const Sidebar = styled.section`
   justify-content: center;
   background-color: ${colors.second};
   color: ${colors.textMain};
-`
+`;
 
 const navItem = `
   display: flex;
   align-items: center;
   margin: 0 1em 0 2em;
   padding: 0.5em 0;
-  border-bottom: 0.05em solid ${colors.mainHalf};
+  border-bottom: 0.05em solid ${colors.main50};
   postion: relative;
   color: ${colors.textBody};
   text-decoration: none;
@@ -48,39 +48,31 @@ const navItem = `
       transform: scale(1);
     }
   }
-`
+`;
 
 export default () => (
   <StaticQuery
     query={graphql`
       {
-        allSitePage {
+        allContentfulArticle(sort: { order: ASC, fields: orderNumber }) {
           edges {
             node {
-              id,
-              path
+              title
+              link
+              orderNumber
             }
           }
         }
       }
     `}
-    render={({
-      allSitePage: {
-        edges
-      }
-    }) => (
+    render={({ allContentfulArticle: { edges } }) => (
       <Sidebar>
-        {
-          edges.map(({
-            node: {
-              id,
-              path
-            }
-          }) => (
-            <Link to={path} key={id} css={navItem} >{id}</Link>
-          ))
-        }
+        {edges.map(({ node: { title, link, orderNumber } }) => (
+          <Link to={link} key={link} css={navItem}>
+            {orderNumber}. {title}
+          </Link>
+        ))}
       </Sidebar>
     )}
   />
-)
+);
