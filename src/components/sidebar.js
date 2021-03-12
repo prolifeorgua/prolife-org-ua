@@ -4,14 +4,9 @@ import styled from "styled-components";
 
 import { colors } from "../utils/vars";
 
-const Sidebar = styled.section`
-  position: fixed;
-  left: 0;
-  width: 20%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const Sidebar = styled.nav`
+  padding: 3em 0em;
+  line-height: 1.25;
   background-color: ${colors.second};
   color: ${colors.textMain};
 `;
@@ -19,11 +14,11 @@ const Sidebar = styled.section`
 const navItem = `
   display: flex;
   align-items: center;
-  margin: 0 1em 0 2em;
+  margin: 0 2em 0 2em;
   padding: 0.5em 0;
   border-bottom: 0.05em solid ${colors.main50};
   postion: relative;
-  color: ${colors.textBody};
+  color: ${colors.textMain};
   text-decoration: none;
 
   &:before {
@@ -69,7 +64,7 @@ export default () => (
       <Sidebar>
         {edges.map(({ node: { title, link, orderNumber } }) => (
           <Link to={link} key={link} css={navItem}>
-            {orderNumber}. {title}
+            {title}
           </Link>
         ))}
       </Sidebar>

@@ -17,12 +17,20 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             title
-            link
             content {
               childMarkdownRemark {
                 html
               }
             }
+            author {
+              childMarkdownRemark {
+                html
+              }
+            }
+            description
+            category
+            link
+            orderNumber
           }
         }
       }

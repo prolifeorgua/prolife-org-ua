@@ -10,14 +10,14 @@
 module.exports = {
   siteMetadata: {
     title: "ProLife.org.ua",
-    phone: "+380 97 787 15 10",
+    phone: "+38 097 787 15 10",
   },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS translated tutorial`,
-        short_name: `GatsbyJS tutorial`,
+        name: `ProLife saves lives`,
+        short_name: `ProLife`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
