@@ -16,7 +16,7 @@
       // margin-bottom: 0;
     }
 
-    & ul li {
+    & ul li, ol li {
       margin-bottom: 0;
     }
 
