@@ -1,11 +1,11 @@
 export const colors = {
-  main: `#440088`,
-  second: `#fbeafc`, 
-  link: `#aa0066`,
-  light: `#ccbbdd`,
-  main50: `rgba(68, 0, 136, 0.5)`,
-  second50: `rgba(251, 250, 252, 0.5)`,
-  textMain: `#220044`,
+  main: `#880000`,
+  second: `#ffeeee`,
+  link: `#aa0000`,
+  light: `#ddaaaa`,
+  main50: `rgba(136, 0, 0, 0.5)`,
+  second50: `rgba(256, 238, 238, 0.5)`,
+  textMain: `#440000`,
   textSecond: `#ffffff`,
-  textBody: `#554477`
+  textBody: `#773333`
 };

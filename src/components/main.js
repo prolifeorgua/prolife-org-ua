@@ -30,10 +30,29 @@
       padding-top: 1em;
     }
 
+    h3, h5 {
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3, h4 {
+      font-size: 1.2rem;
+    }
+
+    h5, h6 {
+      font-size: 1rem;
+      margin-bottom: .2rem;
+      padding-top: 0;
+    }
+
     h2, h3, h4, h5, h6,
-    & strong, & em, & th, tfoot td {
+    & em, & th, tfoot td {
       color: ${colors.textMain};
     }
+
 
     blockquote, code, pre {
       background: ${colors.second};
