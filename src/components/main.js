@@ -53,6 +53,47 @@
       color: ${colors.textMain};
     }
 
+    img {
+      margin-bottom: 0;
+    }
+
+    img + em {
+      color: ${colors.textBody};
+      display: block;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    figure.gallery-item {
+      display: inline-block;
+      padding-left: .33rem;
+      padding-right: .33rem;
+    }
+
+    figure img {
+      display: block;
+      margin: 0 auto;
+      max-width: 25%;
+    }
+
+    @media screen and (max-width: 960px) {
+      figure img {
+        max-width: 55vmin;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      figure img {
+        max-width: 90%;
+      }
+    }
+
+    figcaption {
+      color: ${colors.textBody};
+      text-align: center;
+      font-style: italic;
+      font-size: 0.9em;
+    }
 
     blockquote, code, pre {
       background: ${colors.second};
