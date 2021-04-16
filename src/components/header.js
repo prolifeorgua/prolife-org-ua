@@ -14,7 +14,7 @@ const Header = styled.header`
   align-items: center;
   background-color: ${colors.main};
   color: ${colors.textSecond};
-  padding: .5em 1em;
+  padding: .75em;
 `;
 
 const Logo = styled.img`
