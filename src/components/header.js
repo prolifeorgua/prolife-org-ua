@@ -7,34 +7,14 @@ import { site } from "../utils/site";
 
 const Header = styled.header`
   width: 100%;
-  height: 5em;
+  height: 4em;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   background-color: ${colors.main};
   color: ${colors.textSecond};
-  padding: 1.2em;
-
-  img {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-
-  span {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 2.5rem;
-    align-self: center;
-  }
-
-  #logo-pro {
-    color: #ff0000;
-  }
-
-  #logo-life {
-    color: #ffffff;
-  }
+  padding: .5em 1em;
 `;
 
 const Logo = styled.img`
@@ -71,8 +51,6 @@ export default () => (
       <Header>
         <Link to="/" css={logoLink}>
           <Logo src={publicURL} alt="Logo" />
-          <span id='logo-pro'>Pro</span>
-          <span id='logo-life'>Life</span>
         </Link>
       </Header>
     )}
