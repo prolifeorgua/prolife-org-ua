@@ -9,7 +9,7 @@ import Main from "./main";
 // import Share from "./share";
 import Footer from "./footer";
 
-export default ({ children }) => (
+const layout = ({ children }) => (
   <>
     <Icons />
     <div className="container">
@@ -27,3 +27,5 @@ export default ({ children }) => (
     </div>
   </>
 );
+
+export default layout;

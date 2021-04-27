@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { site } from "../utils/site";
 import Layout from "../components/layout";
 
-export default ({
+const template = ({
   data: {
     allContentfulArticle: {
       edges: [
@@ -46,6 +46,9 @@ export default ({
     </Layout>
   );
 };
+
+export default template;
+
 
 export const query = graphql`
   query($slug: String!) {

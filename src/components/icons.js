@@ -5,7 +5,7 @@
      display: none;
   `;
 
-  export default () => (
+  const icons = () => (
     <>
       <Icons>
         <svg>
@@ -45,6 +45,8 @@
       </Icons>
     </>
   );
+
+  export default icons;
 
 
 /*

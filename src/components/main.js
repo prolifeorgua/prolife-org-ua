@@ -132,10 +132,12 @@
     }
   `;
 
-  export default ({ children }) => (
+  const main = ({ children }) => (
     <>
       <Main>
         {children}
       </Main>
     </>
   );
+
+  export default main;

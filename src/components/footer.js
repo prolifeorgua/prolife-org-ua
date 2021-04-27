@@ -57,7 +57,7 @@
     }
   `;
 
-  export default () => (
+   const footer = () => (
     <Footer>
       <div className="contacts">
         <div className="email">
@@ -79,3 +79,5 @@
       </div>
     </Footer>
   );
+
+  export default footer;

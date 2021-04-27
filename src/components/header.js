@@ -3,7 +3,6 @@ import { Link, StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
 import { colors } from "../utils/vars";
-import { site } from "../utils/site";
 
 const Header = styled.header`
   width: 100%;
@@ -24,7 +23,7 @@ const Logo = styled.img`
 
 const logoLink = `height: 100%;`;
 
-export default () => (
+const header = () => (
   <StaticQuery
     query={graphql`
       {
@@ -56,3 +55,5 @@ export default () => (
     )}
   />
 );
+
+export default header;

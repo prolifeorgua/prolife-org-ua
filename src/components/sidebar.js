@@ -45,7 +45,7 @@ const navItem = `
   }
 `;
 
-export default () => (
+const sideBar = () => (
   <StaticQuery
     query={graphql`
       {
@@ -64,6 +64,7 @@ export default () => (
       <Sidebar>
         {edges.map(({ node: { title, link, orderNumber } }) => (
           <Link to={link} key={link} css={navItem}>
+            {/* {orderNumber}.  */}
             {title}
           </Link>
         ))}
@@ -71,3 +72,5 @@ export default () => (
     )}
   />
 );
+
+export default sideBar;

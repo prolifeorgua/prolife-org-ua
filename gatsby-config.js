@@ -12,6 +12,10 @@ module.exports = {
     title: "ProLife.org.ua",
     phone: "+38 097 787 15 10",
   },
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
