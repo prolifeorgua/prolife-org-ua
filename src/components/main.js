@@ -73,7 +73,7 @@
     figure img {
       display: block;
       margin: 0 auto;
-      max-width: 25%;
+      width: 272px;
     }
 
     @media screen and (max-width: 960px) {
