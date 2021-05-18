@@ -1,13 +1,13 @@
 export const colors = {
-  main: `#008800`,
-  second: `#eeffee`,
-  link: `#00aa00`,
-  light: `#aaddaa`,
-  main50: `rgba(0, 136, 0, 0.5)`,
-  second50: `rgba(238, 256, 238, 0.5)`,
-  textMain: `#004400`,
+  main: `#99ddff`,
+  second: `#eefeff`,
+  link: `#ee4030`,
+  light: `#bbddee`,
+  main50: `rgba(0, 238, 255, 0.5)`,
+  second50: `rgba(238, 254, 255, 0.5)`,
+  textMain: `#005588`,
   textSecond: `#ffffff`,
-  textBody: `#337733`
+  textBody: `#775533`
 };
 
 /**
