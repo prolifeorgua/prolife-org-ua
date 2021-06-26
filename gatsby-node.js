@@ -13,24 +13,32 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return graphql(`
     {
+      site {
+        siteMetadata {
+          title
+          phone
+          siteURL
+        }
+      }
       allContentfulArticle {
         edges {
           node {
             title
             content {
-              childMarkdownRemark {
-                html
-              }
+              childMarkdownRemark { html }
             }
             author {
-              childMarkdownRemark {
-                html
-              }
+              childMarkdownRemark { html }
+              author
+            }
+            hero {
+              file { url }
             }
             description
             category
             link
             orderNumber
+            updatedAt
           }
         }
       }

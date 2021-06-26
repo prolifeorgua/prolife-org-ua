@@ -4,8 +4,9 @@
   import { colors } from "../utils/vars";
 
   const Main = styled.main`
-    padding: 3rem 1rem;
-    max-width: 50em;
+    grid-area: main;
+    // padding: 3rem 1rem;
+    // max-width: 50em;
     color: ${colors.textBody};
 
     & a {
@@ -58,6 +59,7 @@
     }
 
     img + em {
+      font-family: "Roboto Condensed";
       color: ${colors.textBody};
       display: block;
       text-align: center;
@@ -89,6 +91,7 @@
     }
 
     figcaption {
+      font-family: "Roboto Condensed";
       color: ${colors.textBody};
       text-align: center;
       font-style: italic;

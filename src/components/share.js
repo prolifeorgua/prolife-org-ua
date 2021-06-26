@@ -3,10 +3,9 @@
 
   // import useSiteMetadata from '../hooks/use-site-metadata';
   import { colors } from "../utils/vars";
-  import { site } from "../utils/site";
 
   const Share = styled.section`
-    margin: 1.5rem 2rem 0 2rem;
+    margin: 1.5rem 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -61,60 +60,60 @@
  */
 
 
-  const url = encodeURIComponent('https://' + site.siteURL + '/' + site.artSlug);
-  const title = encodeURIComponent(site.artTitle);
-  // const image = encodeURIComponent(site.artBanner);
+  const divShare = ({ url: siteURL, slug, title, hero: imgURL } ) => {
+    const url = encodeURIComponent(`https://${siteURL}${slug}`);
+    const ttl = encodeURIComponent(title);
+    // const img = encodeURIComponent(imgURL);
 
-  // console.log('URL:', `https://t.me/share/url?url=${url}`);
-  // console.log('Title:', title);
+    return (
+      <>
+        <Share>
+          <div>
+            <div className="share facebook">
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} title="Facebook" target="_blank" rel="noreferrer">
+                <svg><use xlinkHref="#icon-facebook" /></svg>
+              </a>
+            </div>
+            <div className="share twitter">
+              <a href={`https://twitter.com/intent/tweet?text=${ttl}&url=${url}`} title="Twitter" target="_blank" rel="noreferrer">
+                <svg><use xlinkHref="#icon-twitter" /></svg>
+              </a>
+            </div>
+            <div className="share vkontakte">
+              <a href={`https://vk.com/share.php?url=${url}`} title="VK" target="_blank" rel="noreferrer">
+                <svg><use xlinkHref="#icon-vkontakte" /></svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div className="share telegram">
+              <a href={`tg://msg?url=${url}&text=${ttl}`} title="Telegram" target="_blank" rel="noreferrer">
+                <svg><use xlinkHref="#icon-telegram" /></svg>
+              </a>
+            </div>
+            <div className="share messenger">
+              <a href={`fb-messenger://share/?link=${url}`} title="Messenger" target="_blank" rel="noreferrer">
+                <svg><use xlinkHref="#icon-messenger" /></svg>
+              </a>
+            </div>
+            <div className="share viber">
+              <a href={`viber://forward?text=${url}`} title="Viber" target="_blank" rel="noreferrer">
+                <svg><use xlinkHref="#icon-viber" /></svg>
+              </a>
+            </div>
+          </div>
+        </Share>
+      </>
+    )
+  };
 
-
-  export default () => (
-    <>
-      <Share>
-        <div>
-          <div className="share facebook">
-            <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} title="Facebook" target="_blank" rel="noreferrer">
-              <svg><use xlinkHref="#icon-facebook" /></svg>
-            </a>
-          </div>
-          <div className="share twitter">
-            <a href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`} title="Twitter" target="_blank" rel="noreferrer">
-              <svg><use xlinkHref="#icon-twitter" /></svg>
-            </a>
-          </div>
-          <div className="share vkontakte">
-            <a href={`https://vk.com/share.php?url=${url}`} title="VK" target="_blank" rel="noreferrer">
-              <svg><use xlinkHref="#icon-vkontakte" /></svg>
-            </a>
-          </div>
-        </div>
-        <div>
-          <div className="share telegram">
-            <a href={`tg://msg?url=${url}&text=${title}`} title="Telegram" target="_blank" rel="noreferrer">
-              <svg><use xlinkHref="#icon-telegram" /></svg>
-            </a>
-          </div>
-          <div className="share messenger">
-            <a href={`fb-messenger://share/?link=${url}`} title="Messenger" target="_blank" rel="noreferrer">
-              <svg><use xlinkHref="#icon-messenger" /></svg>
-            </a>
-          </div>
-          <div className="share viber">
-            <a href={`viber://forward?text=${url}`} title="Viber" target="_blank" rel="noreferrer">
-              <svg><use xlinkHref="#icon-viber" /></svg>
-            </a>
-          </div>
-        </div>
-      </Share>
-    </>
-  );
+  export default divShare;
 
 /*
  * Buttons
  *
           <div className="share telegram">
-            <a href={`https://t.me/share/url?url=${url}&text=${title}`} title="Telegram" target="_blank" rel="noreferrer">
+            <a href={`https://t.me/share/url?url=${url}&text=${ttl}`} title="Telegram" target="_blank" rel="noreferrer">
               <svg><use xlinkHref="#icon-telegram" /></svg>
             </a>
           </div>
@@ -125,12 +124,12 @@
             </a>
           </div>
           <div className="share linkedin">
-            <a href={`www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=&source=`} target="_blank" title="LinkedIn">
+            <a href={`www.linkedin.com/shareArticle?mini=true&url=${url}&title=${ttl}&summary=&source=`} target="_blank" title="LinkedIn">
               <svg><use xlinkHref="#icon-linkedin" /></svg>
             </a>
           </div>
           <div className="share pinterest">
-            <a href={`http://pinterest.com/pin/create/button/?url=${url}&media=${image}&description=${title}`} target="_blank" title="Pinterest">
+            <a href={`http://pinterest.com/pin/create/button/?url=${url}&media=${img}&description=${ttl}`} target="_blank" title="Pinterest">
               <svg><use xlinkHref="#icon-pinterest" /></svg>
             </a>
           </div>
@@ -160,12 +159,12 @@
             </a>
           </div>
           <div className="share odnoklassniki">
-            <a href={`https://connect.ok.ru/offer?url=${url}&title=${title}`} target="_blank" title="Odnoklassniki">
+            <a href={`https://connect.ok.ru/offer?url=${url}&title=${ttl}`} target="_blank" title="Odnoklassniki">
               <svg><use xlinkHref="#icon-odnoklassniki" /></svg>
             </a>
           </div>
           <div className="share tumblr">
-            <a href={`http://www.tumblr.com/share?v=3&u=${url}&t=${title}`} target="_blank" title="Tumblr">
+            <a href={`http://www.tumblr.com/share?v=3&u=${url}&t=${ttl}`} target="_blank" title="Tumblr">
               <svg><use xlinkHref="#icon-tumblr" /></svg>
             </a>
           </div>
@@ -199,7 +198,7 @@
       href: `https://www.instagram.com/`=${urlInstagram}
       https://twitter.com/share?url=[URL]&text=[TITLE]
       http://www.reddit.com/submit?url=[URL]
-      http://connect.mail.ru/share?url=[URL]&title=[TITLE]&description=[DESC]&imageurl=[IMAGE]
+      http://connect.mail.ru/share?url=[URL]&title=[TITLE]&description=[DESC]&imageurl=[img]
       <a href="https://m.me/[ACCOUNT]">Message us on Facebook</a>;
 
 */

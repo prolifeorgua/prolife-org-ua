@@ -2,11 +2,19 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 
-import { site } from "../utils/site";
+// import { site } from "../utils/site";
 import Layout from "../components/layout";
+import { formatDate } from "../utils/format"
 
 const template = ({
   data: {
+    site: {
+      siteMetadata: {
+        title: siteName,
+        phone,
+        siteURL,
+      }
+    },
     allContentfulArticle: {
       edges: [
         {
@@ -16,7 +24,11 @@ const template = ({
               childMarkdownRemark: { html: articleContent }
             },
             author: {
-              childMarkdownRemark: { html: articleAuthor }
+              childMarkdownRemark: { html: articleAuthor },
+              author
+            },
+            hero: {
+              file: { url }
             },
             description,
             category,
@@ -29,18 +41,18 @@ const template = ({
   }
 }) => {
   return (
-    <Layout>
+    <Layout url={siteURL} slug={link} title={title} hero={url} author={articleAuthor}>
       <Helmet>
         <meta charSet="utf-8" />
         <meta name="description" content={description} />
-        <meta property="og:url" content={`https://${site.siteURL}${link}`} />
+        <meta property="og:url" content={`https://${siteURL}${link}`} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:site_name" content={site.siteURL} />
-        <meta property="article:published_time" content={updatedAt} />
-        <meta property="article:author" content={articleAuthor} />
-        <title>{site.siteName} | {title}</title>
+        <meta property="og:site_name" content={siteURL} />
+        <meta property="article:published_time" content={formatDate(updatedAt)} />
+        <meta property="article:author" content={author} />
+        <title>{siteName} | {title}</title>
       </Helmet>
       <div dangerouslySetInnerHTML={{ __html: articleContent }} />
     </Layout>
@@ -52,19 +64,26 @@ export default template;
 
 export const query = graphql`
   query($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        phone
+        siteURL
+      }
+    }
     allContentfulArticle(filter: { link: { eq: $slug } }) {
       edges {
         node {
           title
           content {
-            childMarkdownRemark {
-              html
-            }
+            childMarkdownRemark { html }
           }
           author {
-            childMarkdownRemark {
-              html
-            }
+            childMarkdownRemark { html }
+            author
+          }
+          hero {
+            file { url }
           }
           description
           category

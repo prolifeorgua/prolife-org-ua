@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { colors } from "../utils/vars";
-import { site } from "../utils/site";
 
 const Author = styled.section`
   display: flex;
@@ -10,13 +9,17 @@ const Author = styled.section`
   color: ${colors.textBody};
   font-style: italic;
   font-size: 0.9rem;
+  max-width: 50rem;
+  margin: 0 1rem;
+
 
   & strong, & em {
     color: ${colors.textBody};
   }
 
   & div {
-    max-width: 20em;
+    max-width: 22rem;
+    padding-left: 2rem;
   }
 
   & p {
@@ -25,15 +28,12 @@ const Author = styled.section`
   }
 `;
 
-
-export default () => (
+const divAuthor = ({ author } ) => (
   <>
-    <Author>
-      <div dangerouslySetInnerHTML={{ __html: site.artAuthor }} />
+    <Author >
+      <div dangerouslySetInnerHTML={{ __html: author }} />
     </Author>
   </>
 );
 
-
-
-// <div dangerouslySetInnerHTML={{ __html: html }} />
+export default divAuthor;

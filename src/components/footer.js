@@ -6,6 +6,7 @@
   import { site } from "../utils/site";
 
   const Footer = styled.footer`
+    grid-area: footer;
     width: 100%;
     display: flex;
     flex-direction: column;

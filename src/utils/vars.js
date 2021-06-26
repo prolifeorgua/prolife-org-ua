@@ -5,6 +5,8 @@ export const colors = {
   light: `#bbddee`,
   main50: `rgba(0, 238, 255, 0.5)`,
   second50: `rgba(238, 254, 255, 0.5)`,
+  dark50: `rgba(0, 85, 136, 0.5)`,
+  black50: `rgba(0, 0, 0, 0.5)`,
   textMain: `#005588`,
   textSecond: `#ffffff`,
   textBody: `#775533`

@@ -5,10 +5,17 @@ import styled from "styled-components";
 import { colors } from "../utils/vars";
 
 const Sidebar = styled.nav`
-  padding: 3em 0em;
+  grid-area: sidebar;
   line-height: 1.25;
+  padding: 1em 0;
   background-color: ${colors.second};
   color: ${colors.textMain};
+  z-index: 99;
+`;
+
+const Wrapper = styled.div`
+  max-width: 22rem;
+  margin: 0 auto;
 `;
 
 const navItem = `
@@ -62,12 +69,14 @@ const sideBar = () => (
     `}
     render={({ allContentfulArticle: { edges } }) => (
       <Sidebar>
-        {edges.map(({ node: { title, link, orderNumber } }) => (
-          <Link to={link} key={link} css={navItem}>
-            {/* {orderNumber}.  */}
-            {title}
-          </Link>
-        ))}
+        <Wrapper>
+          {edges.map(({ node: { title, link, orderNumber } }) => (
+            <Link to={link} key={link} css={navItem}>
+              {/* {orderNumber}.  */}
+              {title}
+            </Link>
+          ))}
+        </Wrapper>
       </Sidebar>
     )}
   />

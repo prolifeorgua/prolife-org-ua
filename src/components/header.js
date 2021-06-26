@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { colors } from "../utils/vars";
 
 const Header = styled.header`
+  grid-area: header;
   width: 100%;
   height: 4em;
   display: flex;
