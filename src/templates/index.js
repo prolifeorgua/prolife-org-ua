@@ -28,7 +28,7 @@ const template = ({
               author
             },
             hero: {
-              file: { url }
+              file: { url: imgURL }
             },
             description,
             category,
@@ -41,7 +41,7 @@ const template = ({
   }
 }) => {
   return (
-    <Layout url={siteURL} slug={link} title={title} hero={url} author={articleAuthor}>
+    <Layout url={siteURL} slug={link} title={title} hero={imgURL} author={articleAuthor}>
       <Helmet>
         <meta charSet="utf-8" />
         <meta name="description" content={description} />
@@ -49,6 +49,7 @@ const template = ({
         <meta property="og:type" content="article" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta property="og:image" content={imgURL} />
         <meta property="og:site_name" content={siteURL} />
         <meta property="article:published_time" content={formatDate(updatedAt)} />
         <meta property="article:author" content={author} />
