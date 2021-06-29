@@ -20,9 +20,9 @@ const Ribbon = styled.div`
   background-color: ${colors.dark50};
   display: inline-block;
   position: absolute;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  box-shadow: 0 5px 8px 0 ${colors.black50};
+  border-top: 0.125rem solid white;
+  border-bottom: 0.125rem solid white;
+  box-shadow: 0 0.25rem 0.5rem 0 ${colors.black50};
   width: fit-content;
   z-index: 88;
   bottom: 10%;
@@ -33,7 +33,7 @@ const Header = styled.h1`
   color: ${colors.textSecond};
   font-family: "Roboto Condensed";
   font-variant: small-caps;
-  font-size: 2rem;
+  font-size: calc(2.5vw + 1.5rem);
   overflow-wrap: break-word;
   white-space: pre-wrap;
   margin: 0.5rem 5vw;

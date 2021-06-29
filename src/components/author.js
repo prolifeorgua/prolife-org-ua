@@ -5,12 +5,13 @@ import { colors } from "../utils/vars";
 
 const Author = styled.section`
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   color: ${colors.textBody};
   font-style: italic;
   font-size: 0.9rem;
   max-width: 50rem;
-  margin: 0 1rem;
+  padding: 0 1rem;
+  margin: 0 auto;
 
 
   & strong, & em {
