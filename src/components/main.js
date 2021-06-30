@@ -66,7 +66,14 @@
       font-size: 0.9em;
     }
 
-    figure.gallery-item {
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .gallery-item {
       display: inline-block;
       padding-left: .33rem;
       padding-right: .33rem;
