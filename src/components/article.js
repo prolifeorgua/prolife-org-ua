@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-// import { colors } from "../utils/vars";
-
 const Article = styled.section`
   max-width: 50rem;
   margin: 0 auto;
