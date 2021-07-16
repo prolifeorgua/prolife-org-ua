@@ -7,26 +7,24 @@ const Title = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: start;
+  background: linear-gradient(to bottom, ${colors.main}, transparent);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 33%;
   width: 100%;
-`;
-
-const Hero = styled.img`
-  margin: 0;
+  min-height: 0;
 `;
 
 const Ribbon = styled.div`
   background-color: ${colors.dark50};
   display: inline-block;
-  position: absolute;
   border-top: 0.125rem solid white;
   border-bottom: 0.125rem solid white;
   box-shadow: 0 0.25rem 0.5rem 0 ${colors.black50};
-  width: fit-content;
-  z-index: 88;
-  bottom: 10%;
-  left: 0;
+  margin-bottom: 10%;
 `;
 
 const Header = styled.h1`
@@ -45,8 +43,7 @@ const Header = styled.h1`
 
 const divTitle = ({ title, hero } ) => (
   <>
-    <Title>
-      <Hero src={hero} alt="" />
+    <Title style={{backgroundImage: `url(${hero})`}}>
       <Ribbon>
         <Header>{title}</Header>
       </Ribbon>
