@@ -13,7 +13,7 @@ const Title = styled.section`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 33%;
+  padding-top: 36.5%;
   width: 100%;
   min-height: 0;
 `;
@@ -24,7 +24,7 @@ const Ribbon = styled.div`
   border-top: 0.125rem solid white;
   border-bottom: 0.125rem solid white;
   box-shadow: 0 0.25rem 0.5rem 0 ${colors.black50};
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 `;
 
 const Header = styled.h1`

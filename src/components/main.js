@@ -45,7 +45,7 @@
 
     h5, h6 {
       font-size: 1rem;
-      margin-bottom: .2rem;
+      margin-bottom: .5rem;
       padding-top: 0;
     }
 
@@ -123,6 +123,10 @@
 
     blockquote {
       font-style: italic;
+    }
+
+    blockquote p:first-child {
+      margin-top: 0;
     }
 
     pre {
