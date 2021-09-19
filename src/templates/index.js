@@ -51,6 +51,7 @@ const template = ({
         <meta property="og:description" content={description} />
         <meta property="og:image" content={imgURL} />
         <meta property="og:site_name" content={siteURL} />
+        <meta property="og:locale" content="uk_UA" />
         <meta property="article:published_time" content={formatDate(updatedAt)} />
         <meta property="article:author" content={author} />
         <title>{siteName} | {title}</title>

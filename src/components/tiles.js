@@ -37,6 +37,8 @@ const Tile = styled.div`
   padding: 0.25rem;
 
   & img {
+    width: 100%;
+    aspect-ratio: attr(width) / attr(height);
     margin-bottom: 0;
   }
 `;
@@ -83,7 +85,7 @@ const tiles = () => (
         {edges.slice(1).map(({ node: { title, link, hero: {file: {url}} } }) => (
           <Link to={link} key={link} css={tileStyle}>
             <Tile>
-              <img src={url} alt={title} />
+              <img src={url} alt={title} width="1000" height="500"/>
               <Label>{title}</Label>
             </Tile>
           </Link>
