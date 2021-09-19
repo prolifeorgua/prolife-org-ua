@@ -35,11 +35,29 @@ const Tiles = styled.section`
 const Tile = styled.div`
   background-color: ${colors.second};
   padding: 0.25rem;
+  width: 100%;
+`;
+
+const Pict = styled.div`
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 50%;
+  width: 100%;
+  height: 0;
 
   & img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
     width: 100%;
-    aspect-ratio: attr(width) / attr(height);
+    height: 100%;
     margin-bottom: 0;
+    transition: 0.3s;
+  }
+  & img:hover {
+    transform: scale(1.1);
   }
 `;
 
@@ -85,7 +103,9 @@ const tiles = () => (
         {edges.slice(1).map(({ node: { title, link, hero: {file: {url}} } }) => (
           <Link to={link} key={link} css={tileStyle}>
             <Tile>
-              <img src={url} alt={title} width="1000" height="500"/>
+              <Pict>
+                <img src={url} alt={title} />
+              </Pict>
               <Label>{title}</Label>
             </Tile>
           </Link>

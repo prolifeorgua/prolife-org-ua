@@ -30,13 +30,6 @@ a {
   }
 }
 
-.video {
-  --aspect-ratio: calc(var(--height) / var(--width));
-  --height-with-units: calc(var(--height) * 1px);
-  max-width: 100%;
-  height: Min(calc(var(--body-ratio) * var(--aspect-ratio)), var(--height-with-units));
-}
-
 .videoWrapper {
   position: relative;
   padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
