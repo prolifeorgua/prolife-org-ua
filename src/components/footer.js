@@ -64,14 +64,10 @@
         <div className="email">
           <svg><use xlinkHref="#icon-email" /></svg>
           <p><a href={"mailto:"+site.siteEmail1}>{site.siteEmail1}</a></p>
-          <p><a href={"mailto:"+site.siteEmail2}>{site.siteEmail2}</a></p>
-          <p><a href={"mailto:"+site.siteEmail3}>{site.siteEmail3}</a></p>
         </div>
         <div className="phone">
           <svg><use xlinkHref="#icon-phone" /></svg>
           <p><a href={"tel:"+site.siteTel1}>{site.siteTel1}</a></p>
-          <p><a href={"tel:"+site.siteTel2}>{site.siteTel2}</a></p>
-          <p><a href={"tel:"+site.siteTel3}>{site.siteTel3}</a></p>
         </div>
       </div>
       <div className="copyright">
