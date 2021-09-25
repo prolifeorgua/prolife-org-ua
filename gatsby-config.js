@@ -25,9 +25,9 @@ module.exports = {
         short_name: `ProLife`,
         start_url: `/`,
         background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
+        theme_color: `#99ddff`,
         display: `standalone`,
-        icon: `src/images/sign.png`,
+        icon: `src/images/sign.svg`,
         include_favicon: true
       }
     },
