@@ -13,7 +13,7 @@ import Footer from "./footer";
 
 const layout = ({ url, slug, title, hero, author, children }) => {
   const isHome = slug === "/";
-  const welcome = "Життя- це мить. Її не можна прожити спочатку на чернетці, а потім переписати на чистовик. Антон Чехов!"
+  const welcome = "Життя - це мить. Її не можна прожити спочатку на чернетці, а потім переписати на чистовик. Антон Чехов"
 
   return (
     <>

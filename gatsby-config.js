@@ -28,6 +28,9 @@ module.exports = {
         theme_color: `#99ddff`,
         display: `standalone`,
         icon: `src/images/sign.svg`,
+        icon_options: {
+          purpose: `any maskable`
+        },
         include_favicon: true
       }
     },
