@@ -53,11 +53,11 @@ const template = ({
         <meta name="theme-color" content="#ffffff" />
         <meta name="description" content={description} />
         <meta property="og:url" content={`https://${siteURL}${link}`} />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={imgURL} />
-        <meta property="og:site_name" content={siteURL} />
+        <meta property="og:site_name" content={siteName} />
         <meta property="og:locale" content="uk_UA" />
         <meta property="article:published_time" content={formatDate(updatedAt)} />
         <meta property="article:author" content={author} />

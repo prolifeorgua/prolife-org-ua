@@ -10,7 +10,7 @@
 module.exports = {
   siteMetadata: {
     title: "ProLife",
-    siteURL: "prolife-org-ua.netlify.app",
+    siteURL: "prolife.org.ua",
     phone: "+38 097 787 15 10",
   },
   flags: {
