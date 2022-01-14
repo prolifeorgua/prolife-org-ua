@@ -1,5 +1,5 @@
 import Typography from "typography";
-import theme from "typography-theme-noriega";
+import theme from "typography-theme-judah";
 
 const typography = new Typography(theme);
 

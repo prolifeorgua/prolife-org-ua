@@ -13,6 +13,10 @@
       color: ${colors.link};
     }
 
+    & li:first-child {
+      margin-top: 1rem !important;
+    }
+
     & p:last-child {
       // margin-bottom: 0;
     }
@@ -35,16 +39,20 @@
       text-transform: uppercase;
     }
 
+    h4, h6 {
+      text-transform: none;
+    }
+
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
     }
 
     h3, h4 {
-      font-size: 1.2rem;
+      font-size: 1.33rem;
     }
 
     h5, h6 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin-bottom: .5rem;
       padding-top: 0;
     }
@@ -134,11 +142,11 @@
     }
 
     table {
-      background: #fff8ff;
+      background: ${colors.second10};
     }
 
     tbody tr:nth-child(even) {
-      background-color: #fff6ff;
+      background: ${colors.second25};
     }
 
     thead, tfoot {

@@ -54,7 +54,7 @@
 
     .copysign {
       font-size: 1.5em;
-      vertical-align: -0.1em;
+      vertical-align: -0.05em;
     }
   `;
 

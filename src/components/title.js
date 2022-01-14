@@ -29,9 +29,10 @@ const Ribbon = styled.div`
 
 const Header = styled.h1`
   color: ${colors.textSecond};
-  font-family: "Roboto Condensed";
+  // font-family: "Roboto Condensed";
+  // font-variant: small-caps;
   font-size: calc(2.5vw + 1.5rem);
-  font-variant: small-caps;
+  font-weight: bold;
   overflow-wrap: break-word;
   white-space: pre-wrap;
   margin: 0.5rem 5vw;
@@ -41,7 +42,7 @@ const Header = styled.h1`
   hyphens: auto;
 `;
 
-const divTitle = ({ title, hero } ) => (
+const divTitle = ({ hero, title }) => (
   <>
     <Title style={{backgroundImage: `url(${hero})`}}>
       <Ribbon>

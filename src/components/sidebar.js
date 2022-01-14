@@ -26,6 +26,7 @@ const navItem = `
   border-bottom: 0.05em solid ${colors.main50};
   postion: relative;
   color: ${colors.textMain};
+  font-family: "Roboto Condensed";
   text-decoration: none;
 
   &:before {

@@ -60,7 +60,7 @@ const template = ({
         <meta property="og:site_name" content={siteName} />
         <meta property="og:locale" content="uk_UA" />
         <meta property="article:published_time" content={formatDate(updatedAt)} />
-        <meta property="article:author" content={author} />
+        <meta property="article:author" content={link === "/" ? `${siteName}` : `${author}`} />
         <title>{siteName} | {title}</title>
       </Helmet>
       <div dangerouslySetInnerHTML={{ __html: articleContent }} />

@@ -5,6 +5,7 @@ import Header from "./header";
 import Sidebar from "./sidebar";
 import Tiles from "./tiles";
 import Main from "./main";
+import Motto from "./motto";
 import Title from "./title";
 import Article from "./article"
 import Author from "./author";
@@ -13,7 +14,6 @@ import Footer from "./footer";
 
 const layout = ({ url, slug, title, hero, author, children }) => {
   const isHome = slug === "/";
-  const welcome = "Життя - це мить. Її не можна прожити спочатку на чернетці, а потім переписати на чистовик. Антон Чехов"
 
   return (
     <>
@@ -21,9 +21,10 @@ const layout = ({ url, slug, title, hero, author, children }) => {
       <div className={isHome ? "home" : "page"}>
         <Header />
         <Main>
-          <Title hero={hero} title={isHome ? welcome : title} />
+          { isHome && <Motto hero={hero} payload={author} />}
+          {!isHome && <Title hero={hero} title={title} />}
           <Article>{children}</Article>
-          <Author author={author}/>
+          {!isHome && <Author author={author}/>}
           {!isHome && <Share url={url} slug={slug} title={title} hero={hero} />}
         </Main>
         {isHome ? <Tiles /> : <Sidebar />}
