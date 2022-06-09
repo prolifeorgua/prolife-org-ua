@@ -3,9 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
- if (process.env.NODE_ENV === "development") {
-  require("dotenv").config();
-}
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -14,8 +14,7 @@ module.exports = {
     phone: "+38 097 787 15 10",
   },
   flags: {
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true
+    PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins: [
     {
