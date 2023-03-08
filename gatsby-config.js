@@ -33,6 +33,8 @@ module.exports = {
         include_favicon: true
       }
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-transformer-remark`,
     {
