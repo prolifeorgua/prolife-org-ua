@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, Link, graphql } from "gatsby";
 import styled from "styled-components";
 
 import { colors } from "../utils/vars";
@@ -24,37 +24,27 @@ const Logo = styled.img`
 
 const logoLink = `height: 100%;`;
 
-const header = () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allFile(filter: { name: { eq: "logo" } }) {
-          edges {
-            node {
-              publicURL
-            }
+const header = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allFile(filter: { name: { eq: "logo" } }) {
+        edges {
+          node {
+            publicURL
           }
         }
       }
-    `}
-    render={({
-      allFile: {
-        edges: [
-          {
-            node: {
-              publicURL
-            }
-          }
-        ]
-      }
-    }) => (
-      <Header>
-        <Link to="/" css={logoLink}>
-          <Logo src={publicURL} alt="Logo" />
-        </Link>
-      </Header>
-    )}
-  />
-);
+    }
+  `);
+  const {allFile: {edges: [{node: {publicURL: url}}]}} = data;
+
+  return (
+    <Header>
+      <Link to="/" css={logoLink}>
+        <Logo src={url} alt="Logo" />
+      </Link>
+    </Header>
+  );
+};
 
 export default header;

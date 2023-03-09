@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, Link, graphql } from "gatsby";
 import styled from "styled-components";
 
 import { colors } from "../utils/vars";
@@ -80,39 +80,39 @@ const tileStyle = `
   }
 `;
 
-const tiles = () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allContentfulArticle(sort: { order: ASC, fields: orderNumber }) {
-          edges {
-            node {
-              title
-              link
-              orderNumber
-              hero {
-                file { url }
-              }
+const tiles = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulArticle(sort: { orderNumber: ASC }) {
+        edges {
+          node {
+            title
+            link
+            orderNumber
+            hero {
+              file { url }
             }
           }
         }
       }
-    `}
-    render={({ allContentfulArticle: { edges } }) => (
-      <Tiles>
-        {edges.slice(1).map(({ node: { title, link, hero: {file: {url}} } }) => (
-          <Link to={link} key={link} css={tileStyle}>
-            <Tile>
-              <Pict>
-                <img src={url} alt={title} />
-              </Pict>
-              <Label>{title}</Label>
-            </Tile>
-          </Link>
-        ))}
-      </Tiles>
-    )}
-  />
-);
+    }
+  `);
+  const {allContentfulArticle: {edges}} = data;
+
+  return (
+    <Tiles>
+      {edges.slice(1).map(({node: {title, link, hero: {file: {url}}}}) => (
+        <Link to={link} key={link} css={tileStyle}>
+          <Tile>
+            <Pict>
+              <img src={url} alt={title} />
+            </Pict>
+            <Label>{title}</Label>
+          </Tile>
+        </Link>
+      ))}
+    </Tiles>
+  )
+};
 
 export default tiles;

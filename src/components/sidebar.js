@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, Link, graphql } from "gatsby";
 import styled from "styled-components";
 
 import { colors } from "../utils/vars";
@@ -53,34 +53,34 @@ const navItem = `
   }
 `;
 
-const sideBar = () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allContentfulArticle(sort: { order: ASC, fields: orderNumber }) {
-          edges {
-            node {
-              title
-              link
-              orderNumber
-            }
+const sideBar = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulArticle(sort: { orderNumber: ASC }) {
+        edges {
+          node {
+            title
+            link
+            orderNumber
           }
         }
       }
-    `}
-    render={({ allContentfulArticle: { edges } }) => (
-      <Sidebar>
-        <Wrapper>
-          {edges.map(({ node: { title, link, orderNumber } }) => (
-            <Link to={link} key={link} css={navItem}>
-              {/* {orderNumber}.  */}
-              {title}
-            </Link>
-          ))}
-        </Wrapper>
-      </Sidebar>
-    )}
-  />
-);
+    }
+  `);
+  const {allContentfulArticle: {edges}} = data;
+
+  return (
+    <Sidebar>
+      <Wrapper>
+        {edges.map(({node: {title, link, orderNumber}}) => (
+          <Link to={link} key={link} css={navItem}>
+            {/* {orderNumber}.  */}
+            {title}
+          </Link>
+        ))}
+      </Wrapper>
+    </Sidebar>
+  )
+};
 
 export default sideBar;
