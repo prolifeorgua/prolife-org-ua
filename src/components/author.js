@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { colors } from "../utils/vars";
 
-const Author = styled.section`
+const AuthorStyled = styled.section`
   display: flex;
   justify-content: flex-end;
   color: ${colors.textBody};
@@ -29,12 +29,10 @@ const Author = styled.section`
   }
 `;
 
-const divAuthor = ({ author } ) => (
-  <>
-    <Author >
-      <div dangerouslySetInnerHTML={{ __html: author }} />
-    </Author>
-  </>
+const Author = ({ author } ) => (
+  <AuthorStyled>
+    <div dangerouslySetInnerHTML={{ __html: author }} />
+  </AuthorStyled>
 );
 
-export default divAuthor;
+export default Author;

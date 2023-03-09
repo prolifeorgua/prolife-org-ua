@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { colors } from "../utils/vars";
 
-const Sidebar = styled.nav`
+const SidebarStyled = styled.nav`
   grid-area: sidebar;
   line-height: 1.25;
   padding: 1em 0;
@@ -53,7 +53,7 @@ const navItem = `
   }
 `;
 
-const sideBar = () => {
+const Sidebar = () => {
   const data = useStaticQuery(graphql`
     {
       allContentfulArticle(sort: { orderNumber: ASC }) {
@@ -70,7 +70,7 @@ const sideBar = () => {
   const {allContentfulArticle: {edges}} = data;
 
   return (
-    <Sidebar>
+    <SidebarStyled>
       <Wrapper>
         {edges.map(({node: {title, link, orderNumber}}) => (
           <Link to={link} key={link} css={navItem}>
@@ -79,8 +79,8 @@ const sideBar = () => {
           </Link>
         ))}
       </Wrapper>
-    </Sidebar>
+    </SidebarStyled>
   )
 };
 
-export default sideBar;
+export default Sidebar;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { colors } from "../utils/vars";
 
-const Header = styled.header`
+const HeaderStyled = styled.header`
   grid-area: header;
   width: 100%;
   height: 4em;
@@ -24,7 +24,7 @@ const Logo = styled.img`
 
 const logoLink = `height: 100%;`;
 
-const header = () => {
+const Header = () => {
   const data = useStaticQuery(graphql`
     {
       allFile(filter: { name: { eq: "logo" } }) {
@@ -39,12 +39,12 @@ const header = () => {
   const {allFile: {edges: [{node: {publicURL: url}}]}} = data;
 
   return (
-    <Header>
+    <HeaderStyled>
       <Link to="/" css={logoLink}>
         <Logo src={url} alt="Logo" />
       </Link>
-    </Header>
+    </HeaderStyled>
   );
 };
 
-export default header;
+export default Header;

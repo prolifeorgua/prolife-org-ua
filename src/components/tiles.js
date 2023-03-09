@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { colors } from "../utils/vars";
 
-const Tiles = styled.section`
+const TilesStyled = styled.section`
   // grid-area: tiles;
 
   @media screen and (min-width: 40rem) {
@@ -80,7 +80,7 @@ const tileStyle = `
   }
 `;
 
-const tiles = () => {
+const Tiles = () => {
   const data = useStaticQuery(graphql`
     {
       allContentfulArticle(sort: { orderNumber: ASC }) {
@@ -100,7 +100,7 @@ const tiles = () => {
   const {allContentfulArticle: {edges}} = data;
 
   return (
-    <Tiles>
+    <TilesStyled>
       {edges.slice(1).map(({node: {title, link, hero: {file: {url}}}}) => (
         <Link to={link} key={link} css={tileStyle}>
           <Tile>
@@ -111,8 +111,8 @@ const tiles = () => {
           </Tile>
         </Link>
       ))}
-    </Tiles>
+    </TilesStyled>
   )
 };
 
-export default tiles;
+export default Tiles;

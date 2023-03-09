@@ -12,7 +12,7 @@ import Author from "./author";
 import Share from "./share";
 import Footer from "./footer";
 
-const layout = ({ url, slug, title, hero, author, children }) => {
+const Layout = ({ url, slug, title, hero, author, children }) => {
   const isHome = slug === "/";
 
   return (
@@ -35,4 +35,4 @@ const layout = ({ url, slug, title, hero, author, children }) => {
   )
 };
 
-export default layout;
+export default Layout;

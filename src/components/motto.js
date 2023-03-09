@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { colors } from "../utils/vars";
 
-const Motto = styled.div`
+const MottoStyled = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -44,12 +44,10 @@ const Motto = styled.div`
 
 `;
 
-const divTitle = ({ hero, payload }) => (
-  <>
-    <Motto style={{backgroundImage: `url(${hero})`}}>
-      <div dangerouslySetInnerHTML={{ __html: payload }} />
-    </Motto>
-  </>
+const Motto = ({ hero, payload }) => (
+  <MottoStyled style={{backgroundImage: `url(${hero})`}}>
+    <div dangerouslySetInnerHTML={{ __html: payload }} />
+  </MottoStyled>
 );
 
-export default divTitle;
+export default Motto;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { colors } from "../utils/vars";
 
-const Title = styled.section`
+const TitleStyled = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -42,14 +42,12 @@ const Header = styled.h1`
   hyphens: auto;
 `;
 
-const divTitle = ({ hero, title }) => (
-  <>
-    <Title style={{backgroundImage: `url(${hero})`}}>
-      <Ribbon>
-        <Header>{title}</Header>
-      </Ribbon>
-    </Title>
-  </>
+const Title = ({ hero, title }) => (
+  <TitleStyled style={{backgroundImage: `url(${hero})`}}>
+    <Ribbon>
+      <Header>{title}</Header>
+    </Ribbon>
+  </TitleStyled>
 );
 
-export default divTitle;
+export default Title;
