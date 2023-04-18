@@ -1,7 +1,7 @@
 export const colors = {
   main: `#99ddff`,
   second: `#ebf8ff`,
-  link: `#ee4433`,
+  link: `#0077bb`,
   light: `#bbddee`,
   main50: `rgba(153, 221, 255, 0.5)`,
   second10: `rgba(235, 248, 255, 0.1)`,

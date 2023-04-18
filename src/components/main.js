@@ -11,6 +11,10 @@ const MainStyled = styled.main`
 
   & a {
     color: ${colors.link};
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   & li:first-child {
