@@ -57,6 +57,20 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`
       }
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-PMWCNRCRDD",
+        ],
+        gtagConfig: {
+          anonymize_ip: false,
+        },
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`
